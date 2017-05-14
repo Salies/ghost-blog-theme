@@ -1,0 +1,19 @@
+{
+    "name": "saliesblog",
+    "description": "The theme that powers my personal blog.",
+    "demo": "https://blog.saliesbox.com",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=0.9.0 <1.0.0"
+    },
+    "author": {
+        "name": "Salies",
+        "email": "danielserezane@outlook.com",
+        "url": "https://github.com/Salies"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Salies/saliesblog-ghost-theme"
+    },
+    "bugs": "https://github.com/Salies/saliesblog-ghost-theme/issues",
+}

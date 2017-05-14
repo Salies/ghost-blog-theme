@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {{!-- Document Settings --}}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    {{!-- Page Meta --}}
+    <title>{{meta_title}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    {{!-- Mobile Meta --}}
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    {{!-- Brand icon --}}
+    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+
+    {{!-- Styles'n'Scripts --}}
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400|Roboto" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/blog.css"}}" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/atom-one-dark.min.css">
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+    {{!-- Ghost outputs important style and meta data with this tag --}}
+    {{ghost_head}}
+</head>
+<body class="{{body_class}} nav-closed">
+
+    {{!-- The blog navigation links --}}
+    {{navigation}}
+
+    <div class="site-wrapper">
+
+        {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+        {{{body}}}
+
+        {{!-- The tiny footer at the very bottom --}}
+        <footer class="site-footer clearfix">
+        <footer class="footer">
+            <section class="innerfooter">
+                <footer>
+                <div class="coluna">
+                    <header><img src="{{asset "imgs/info.png"}}"><div class="mobtitle">Sobre o Blog</div><br></header>
+                    <div class="footdesc">
+                    Há muito tempo perambulo por fóruns e plataformas do gênero, e em tais fóruns sempre gostei de produzir conteúdos como análises, resumos, etc. No entanto, nem sempre o assunto do fórum
+                    concordava com o que eu queria escrever, então, resolvi criar este blog para compilar minhas baboseiras em apenas um local. Talvez alguém, um dia, tenha interesse em lê-las.
+                    </div>
+                </div>
+
+                <div class="coluna">
+                    <header><img src="{{asset "imgs/link.png"}}"><div style="margin-top: 3px;">Links e Contatos</div><br></header>
+                    <div class="footdesc">
+                        <ul>
+                            <li><a href="https://saliesbox.com">Página Principal</a></li>
+                            <li><a href="https://github.com/Salies">GitHub</a></li>
+                            <li><a href="http://steamcommunity.com/sonicsalies">Steam</a></li>
+                            <li><a href="https://www.trueachievements.com/gamer/Sonic+Salies">TrueAchievements</a></li>
+                            <li><a href="https://playoverwatch.com/en-us/career/pc/us/Salies-1627">Battle.net</a></li>
+                            <li><a href="https://twitter.com/saliesbox">Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="coluna">
+                    <header><img src="{{asset "imgs/credit.png"}}"><div style="margin-top: 3px;">Créditos e Informações</div><br></header>
+                    <div class="footdesc">
+                    <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} <br>Proudly published with <a href="https://ghost.org">Ghost</a>.<br>
+                    Code Highlighting made with <a href="https://highlightjs.org/">highlight.js</a>.<br> Blog theme made by Salies.
+                    </div>
+                </div>
+                </footer>
+            </section>
+        </footer>
+<section class="testimonials">
+  <div>
+    <ul id="testimonials-ul">
+      <li>
+        <header><img src="{{asset "imgs/info.png"}}"> <span class="mobtitle">Sobre o Blog</span></header>
+        <span>Há muito tempo perambulo por fóruns e plataformas do gênero, e em tais fóruns sempre gostei de produzir conteúdos como análises, resumos, etc. No entanto, nem sempre o assunto do fórum concordava com o que eu queria escrever, então, resolvi criar este blog para compilar minhas baboseiras em apenas um local. Talvez alguém, um dia, tenha interesse em lê-las.</span>
+      </li>
+      <li style="font-size:1.4rem;">
+        <header><img src="{{asset "imgs/link.png"}}"> <span class="mobtitle">Links e Contatos</span></header>
+        <a href="https://saliesbox.com">Página Principal</a><br>
+        <a href="https://github.com/Salies">GitHub</a><br>
+        <a href="http://steamcommunity.com/sonicsalies">Steam</a><br>
+        <a href="https://www.trueachievements.com/gamer/Sonic+Salies">TrueAchievements</a><br>
+        <a href="https://playoverwatch.com/en-us/career/pc/us/Salies-1627">Battle.net</a><br>
+        <a href="https://twitter.com/saliesbox">Twitter</a>
+      </li>
+      <li>
+        <header><img src="{{asset "imgs/credit.png"}}"> <span class="mobtitle">Sobre o Blog</span></header>
+        <a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}} <br>Proudly published with <a href="https://ghost.org">Ghost</a>.<br>
+        Code Highlighting made with <a href="https://highlightjs.org/">highlight.js</a>.<br> Blog theme made by Salies.
+      </li>
+    </ul>
+  </div>
+  <div class="testimonials-control">
+    <img src="{{asset "imgs/setaesq.png"}}" id="testimonials-l">
+    <img src="{{asset "imgs/setadir.png"}}" id="testimonials-r">
+    <!--<i class="fa fa-angle-right fa-2x" id="testimonials-r"></i>-->
+  </div>
+</section>
+        </footer>
+
+     </div>
+
+    {{!-- jQuery needs to come before `{{ghost_foot}}` so that jQuery can be used in code injection --}}
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+    {{!-- Facebook embedding --}}
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    {{!--Search Engine--}}
+    <script>
+// Get carousel elements
+
+var tLeftButton = $("#testimonials-l");
+var tRightButton = $("#testimonials-r");
+
+// Get number of <li> elements in carousel
+
+var tItemCount = document.getElementById('testimonials-ul').querySelectorAll('li').length;
+
+// Set length based on that
+
+var tWidth = tItemCount * 100 + "vw";
+$(".testimonials ul").css("width", tWidth);
+
+// Button functionality
+
+var tPosition = 0;
+
+tRightButton.click(function() {
+  if (tPosition < (tItemCount - 1)) {
+    tPosition++;
+    var m = "-" + (100 * tPosition) + "vw";
+    $(".testimonials ul").animate({
+      "left": m
+    }, 500);
+    greyButton();
+  }
+});
+
+tLeftButton.click(function() {
+  if (tPosition > 0) {
+    tPosition--;
+    var m = "-" + (100 * tPosition) + "vw";
+    $(".testimonials ul").animate({
+      "left": m
+    }, 500);
+    greyButton();
+  }
+});
+
+// Grey out buttons if not useable 
+
+var greyButton = function() {
+  if (tPosition == 0) {
+    tLeftButton.css("opacity", "0.3");
+    tLeftButton.css("cursor", "default");
+  } else if (tPosition == (tItemCount - 1)) {
+    tRightButton.css("opacity", "0.3");
+    tRightButton.css("cursor", "default");
+  } else {
+    tRightButton.css("opacity", "1");
+    tRightButton.css("cursor", "pointer");
+    tLeftButton.css("opacity", "1");
+    tLeftButton.css("cursor", "pointer");
+  }
+}
+
+greyButton();
+
+// And finally, if there's only one quote, kill the buttons altogether
+
+if ( tItemCount == 1 ) {
+  $('.testimonials-control').css('display','none');
+}
+
+
+    </script>
+    {{!-- Ghost outputs important scripts and data with this tag --}}
+    {{ghost_foot}}
+    {{!-- Fitvids makes video embeds responsive and awesome --}}
+    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
+    {{!-- The main JavaScript file for Casper --}}
+    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+
+</body>
+</html>

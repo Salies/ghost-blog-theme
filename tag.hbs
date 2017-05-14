@@ -1,0 +1,68 @@
+{{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
+{{!-- If we have a tag cover, display that - else blog cover - else nothing --}}
+<div class="big-header">
+    <header class="header">
+        <a href="{{@blog.url}}">
+        <img src="{{asset "css/solaire.png"}}" class="logo-img">
+        <section class="title">
+            <span>{{@blog.title}}</span><br>
+            <span><script>frases=["Watch the skies, traveler!","Praise the Sun!","Rise and Shine!"];frasenum = Math.floor(Math.random() * 3) + 0;frase = frases[frasenum];document.write(frase);</script></span>
+        </section>
+        </a>
+        <section class="socials">
+            <a href="https://github.com/Salies"><img src="{{asset "css/github.png"}}"></a>
+            <a href="https://www.youtube.com/user/DGamerPlay"><img src="{{asset "css/youtube.png"}}"></a>
+            <a href="http://steamcommunity.com/id/sonicsalies/"><img src="{{asset "css/steam.png"}}"></a>
+        </section>
+    </header>
+</div>
+
+{{!-- The main content area on the homepage --}}
+<main class="content" role="main">
+        <div class="sidebar">
+        <aside class="sideblock sidesearch">
+            <span>Pesquisar:</span>
+            <script>
+                (function() {
+                    var cx = '011029127331981340177:fgaektts_lk';
+                    var gcse = document.createElement('script');
+                    gcse.type = 'text/javascript';
+                    gcse.async = true;
+                    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                    var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(gcse, s);
+                })();
+            </script>
+            <gcse:search></gcse:search>
+        </aside>
+
+        <aside class="sideblock album">
+            <div style="background:#1a1a1a;color:#fff;padding-left:15px;padding-top:3px;">Álbum do Mês</div>
+            <section class="display">
+                Análise em breve...
+            </section>
+            <div style="background:url({{asset 'imgs/album.png'}});height:244px;"></div>
+        </aside>
+
+        <aside class="sideblock game">
+            <div style="background:#1a1a1a;color:#fff;padding-left:15px;padding-top:3px;">Jogo do Mês</div>
+            <section class="display">
+                Análise em breve...
+            </section>
+            <div style="background:url({{asset 'imgs/game.png'}});height:215px;"></div>
+        </aside>
+
+        <aside class="sideblock">
+            <span>Compartilhe:</span><br>
+            <a href="https://twitter.com/saliesbox" class="twitter-follow-button" data-show-count="false">Follow @saliesbox</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script><br>
+            <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Compartilhar</a></div>   
+        </aside>
+    </div>  
+
+    {{!-- The tag below includes the post loop - partials/loop.hbs --}}
+    {{> "loop"}}
+
+</main>
